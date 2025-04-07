@@ -1,0 +1,102 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f5f6fa;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2; /* Gris claro */
+  padding: 10px 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px; /* Ajusta el tamaño del logo */
+  margin-right: 10px; /* Espaciado entre el logo y el texto */
+}
+
+.logo-text {
+  font-size: 1.2rem; /* Tamaño del texto */
+  font-weight: bold; /* Negrita */
+  color: black; /* Color del texto */
+}
+header {
+  background-color: #fff;
+  padding: 20px 40px;
+  border-bottom: 3px solid #7a5cf2;
+}
+
+header h1 {
+  margin: 0;
+  color: #333;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 30px 40px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-header a {
+  color: #7a5cf2;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px 8px;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.recursos-lista, .notif-lista {
+  list-style: none;
+  padding-left: 0;
+  font-size: 14px;
+}
+
+.recursos-lista li, .notif-lista li {
+  margin-bottom: 8px;
+}
+
+.recursos-lista span, .notif-lista span {
+  color: #666;
+  font-size: 13px;
+}
+
+.chart {
+  padding: 20px;
+}

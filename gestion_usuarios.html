@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gestión de Usuarios</title>
+  <link rel="stylesheet" href="gestion_usuarios.css" />
+ 
+ </head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo Inmobiliaria Soft">
+        <span class="logo-text">ARRENDAMIENTO SOFT</span>
+    </div>
+    
+    </nav>
+
+  <div class="header">
+    <h2>Gestión de Usuarios</h2>
+    <p>Puedes agregar nuevos usuarios o cambiar los permisos existentes. <br>
+      Cada usuario puede tener acceso a toda la empresa o solo a sitios específicos.</p>
+  </div>
+
+  <div class="container">
+    <div class="top-bar">
+      <select>
+        <option>Todos los Sitios</option>
+      </select>
+      <button class="btn-invite" id="btnAbrirModal">Invitar a Usuarios</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>NOMBRE</th>
+          <th>EMAIL</th>
+          <th>2FA</th>
+          <th>ROL</th>
+          <th>SITIOS</th>
+          <th>ACCIONES</th>
+        </tr>
+      </thead>
+      <tbody id="tablaUsuarios">
+        <!-- Filas dinámicas aquí -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Agregar Usuario</h3>
+      <form id="formUsuario">
+        <input type="text" id="nombre" placeholder="Nombre completo" required />
+        <input type="email" id="email" placeholder="Correo electrónico" required />
+        <input type="text" id="rol" placeholder="Rol" required />
+        <input type="text" id="sitio" placeholder="Sitio" required />
+        <button type="submit">Agregar</button>
+        <button type="button" class="close-btn" id="cerrarModal">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const btnAbrirModal = document.getElementById("btnAbrirModal");
+    const modal = document.getElementById("modal");
+    const cerrarModal = document.getElementById("cerrarModal");
+    const formUsuario = document.getElementById("formUsuario");
+    const tablaUsuarios = document.getElementById("tablaUsuarios");
+
+    // Abrir/cerrar modal
+    btnAbrirModal.addEventListener("click", () => modal.classList.remove("hidden"));
+    cerrarModal.addEventListener("click", () => modal.classList.add("hidden"));
+
+    // Agregar usuario
+    formUsuario.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("nombre").value;
+      const email = document.getElementById("email").value;
+      const rol = document.getElementById("rol").value;
+      const sitio = document.getElementById("sitio").value;
+
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td class="avatar">
+          <span class="avatar-img"></span>
+          ${nombre}
+        </td>
+        <td>${email}</td>
+        <td><span class="tag">2FA</span></td>
+        <td>${rol}</td>
+        <td>${sitio}</td>
+        <td class="icon-actions">
+          <span class="editar">✏️</span>
+          <span class="eliminar">🗑️</span>
+        </td>
+      `;
+
+      tablaUsuarios.appendChild(tr);
+
+      formUsuario.reset();
+      modal.classList.add("hidden");
+    });
+
+    // Eliminar usuario
+    tablaUsuarios.addEventListener("click", function(e) {
+      if (e.target.classList.contains("eliminar")) {
+        const fila = e.target.closest("tr");
+        fila.remove();
+      }
+    });
+  </script>
+</body>
+</html>

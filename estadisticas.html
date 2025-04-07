@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Control - Estadísticas</title>
+  <link rel="stylesheet" href="estadisticas.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Logo Inmobiliaria Soft">
+        <span class="logo-text">ARRENDAMIENTO SOFT</span>
+    </div>
+    
+    </nav>
+  <header>
+    <h1>Panel de Control</h1>
+  </header>
+
+  <main class="dashboard">
+    <section class="card sitios">
+      <div class="card-header">
+        <h2>Sus Sitios</h2>
+        <a href="#">Ver todo</a>
+      </div>
+      <table>
+        <thead>
+          <tr><th>NOMBRE</th><th>VISITAS</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>kinstalife</td><td>661</td></tr>
+          <tr><td>create with kinsta</td><td>30</td></tr>
+          <tr><td>kinstav3</td><td>29</td></tr>
+          <tr><td>kinstacdnl-cloudflare</td><td>12</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card recursos">
+      <div class="card-header">
+        <h2>Uso de Recursos</h2>
+        <span>27 ene - 27 feb</span>
+      </div>
+      <ul class="recursos-lista">
+        <li><strong>Este mes</strong>: Día 18 de 31</li>
+        <li>Visitas: <span>786 de 100,000</span></li>
+        <li>Uso de CDN: <span>8 de 200 GB</span></li>
+        <li>Uso de Espacio Web: <span>2.75 GB de 50 GB</span></li>
+        <li>Sitios: <span>19 de 20</span></li>
+      </ul>
+    </section>
+
+    <section class="card notificaciones">
+      <div class="card-header">
+        <h2>Notificaciones</h2>
+        <a href="#">Ver todo</a>
+      </div>
+      <ul class="notif-lista">
+        <li>Monitorización completada en kinstalife - <span>12 feb</span></li>
+        <li>Error SSL detectado en kinstamultisite - <span>4 feb</span></li>
+        <li>CDN service ha sido removido - <span>2 feb</span></li>
+        <li>Monitorización completada - <span>1 feb</span></li>
+        <li>El plan de alojamiento ha sido pagado - <span>27 ene</span></li>
+      </ul>
+    </section>
+
+    <section class="card chart">
+      <h3>Transferencia de datos</h3>
+      <canvas id="chartTransferencia"></canvas>
+    </section>
+
+    <section class="card chart">
+      <h3>Visitas Únicas</h3>
+      <canvas id="chartVisitas"></canvas>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="estadisticas.js"></script>
+</body>
+</html>
