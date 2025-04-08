@@ -1,35 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <!-- Declaración del juego de caracteres para permitir caracteres especiales como tildes y eñes -->
   <meta charset="UTF-8" />
+  <!-- Configuración para que el diseño sea responsivo en dispositivos móviles -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <!-- Título de la página -->
   <title>Panel de Control - Estadísticas</title>
+  <!-- Enlace a la hoja de estilos externa -->
   <link rel="stylesheet" href="estadisticas.css">
 </head>
 <body>
+  <!-- Barra de navegación principal -->
   <nav class="navbar">
+    <!-- Contenedor del logo y texto -->
     <div class="logo">
+        <!-- Logo de la inmobiliaria -->
         <img src="img/logo.png" alt="Logo Inmobiliaria Soft">
+        <!-- Texto descriptivo junto al logo -->
         <span class="logo-text">ARRENDAMIENTO SOFT</span>
     </div>
-    
-    </nav>
+  </nav>
+  
+  <!-- Encabezado principal de la página -->
   <header>
     <h1>Panel de Control</h1>
   </header>
 
+  <!-- Contenedor principal del dashboard -->
   <main class="dashboard">
+    <!-- Tarjeta que muestra las estadísticas de sitios -->
     <section class="card sitios">
       <div class="card-header">
         <h2>Sus Sitios</h2>
+        <!-- Enlace para ver todos los sitios -->
         <a href="#">Ver todo</a>
       </div>
+      <!-- Tabla que muestra los nombres de sitios y sus visitas -->
       <table>
         <thead>
-          <tr><th>NOMBRE</th><th>VISITAS</th></tr>
+          <tr>
+            <!-- Encabezados de las columnas -->
+            <th>NOMBRE</th>
+            <th>VISITAS</th>
+          </tr>
         </thead>
         <tbody>
+          <!-- Filas con los datos de los sitios -->
           <tr><td>kinstalife</td><td>661</td></tr>
           <tr><td>create with kinsta</td><td>30</td></tr>
           <tr><td>kinstav3</td><td>29</td></tr>
@@ -38,11 +55,14 @@
       </table>
     </section>
 
+    <!-- Tarjeta que muestra el uso de recursos -->
     <section class="card recursos">
       <div class="card-header">
         <h2>Uso de Recursos</h2>
+        <!-- Período de tiempo para el reporte -->
         <span>27 ene - 27 feb</span>
       </div>
+      <!-- Lista de uso detallado de los recursos -->
       <ul class="recursos-lista">
         <li><strong>Este mes</strong>: Día 18 de 31</li>
         <li>Visitas: <span>786 de 100,000</span></li>
@@ -52,11 +72,14 @@
       </ul>
     </section>
 
+    <!-- Tarjeta que muestra notificaciones recientes -->
     <section class="card notificaciones">
       <div class="card-header">
         <h2>Notificaciones</h2>
+        <!-- Enlace para ver todas las notificaciones -->
         <a href="#">Ver todo</a>
       </div>
+      <!-- Lista de notificaciones -->
       <ul class="notif-lista">
         <li>Monitorización completada en kinstalife - <span>12 feb</span></li>
         <li>Error SSL detectado en kinstamultisite - <span>4 feb</span></li>
@@ -66,18 +89,24 @@
       </ul>
     </section>
 
+    <!-- Tarjeta que muestra un gráfico de transferencia de datos -->
     <section class="card chart">
       <h3>Transferencia de datos</h3>
+      <!-- Contenedor para el gráfico -->
       <canvas id="chartTransferencia"></canvas>
     </section>
 
+    <!-- Tarjeta que muestra un gráfico de visitas únicas -->
     <section class="card chart">
       <h3>Visitas Únicas</h3>
+      <!-- Contenedor para el gráfico -->
       <canvas id="chartVisitas"></canvas>
     </section>
   </main>
 
+  <!-- Enlace al CDN de Chart.js para renderizar gráficos -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Archivo JavaScript externo con la lógica del panel -->
   <script src="estadisticas.js"></script>
 </body>
 </html>
