@@ -1,56 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/login.css">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/login.css" />
+  <title>Login - Arrendamiento Soft</title>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo Inmobiliaria Soft">
-            <span class="logo-text">ARRENDAMIENTO SOFT</span>
+  <nav class="navbar">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo Inmobiliaria Soft" />
+      <span class="logo-text">ARRENDAMIENTO SOFT</span>
+    </div>
+    <ul>
+      <li><a href="index.html#servicios">Servicios</a></li>
+      <li><a href="sing_in.html">Registrar</a></li>
+      <li><a href="login.html">Iniciar Sesión</a></li>
+      <li><a href="index.html#contacto">Contáctenos</a></li>
+    </ul>
+  </nav>
+
+  <section id="iniciar-sesion" class="login-section">
+    <div class="login-box">
+      <div class="avatar">
+        <img src="img/USUARIO1.png" alt="Avatar" />
+      </div>
+      <form id="loginForm">
+        <div class="input-group">
+          <img src="img/USUARIO.png" alt="Usuario" />
+          <input type="text" id="username" placeholder="Username" required />
         </div>
-        <ul>
-            <li><a href="index.html#servicios">Servicios</a></li>
-            <li><a href="sing_in.html">Registrar</a></li>
-            <li><a href="login.html">Iniciar Sesión</a></li>
-            <li><a href="index.html#contacto">Contáctenos</a></li>
-        </ul>
-        </nav>
+        <div class="input-group">
+          <img src="img/CONTRASEÑA.png" alt="Contraseña" />
+          <input type="password" id="password" placeholder="************" required />
+        </div>
+        <div class="options">
+          <label><input type="checkbox" /> Remember me</label>
+          <a href="#">Forgot Password?</a>
+        </div>
+        <button type="submit">LOGIN</button>
+      </form>
+    </div>
+  </section>
 
-
-
-
-
-        <section id="iniciar-sesion" class="login-section">
-            <div class="login-box">
-              <div class="avatar">
-                <img src="img/USUARIO1.png" alt="Avatar">
-              </div>
-              <form>
-                <div class="input-group">
-                  <img src="img/USUARIO.png" alt="Usuario">
-                  <input type="text" placeholder="Username" required>
-                </div>
-                <div class="input-group">
-                  <img src="img/CONTRASEÑA.png" alt="Contraseña">
-                  <input type="password" placeholder="************" required>
-                </div>
-                <div class="options">
-                  <label><input type="checkbox"> Remember me</label>
-                  <a href="#">Forgot Password?</a>
-                </div>
-                <button type="submit">LOGIN</button>
-              </form>
-            </div>
-          </section>
-          
-          
-
-
-
-    
+  <!-- ✅ Aquí va el script para que cargue después del DOM -->
+  <script src="login.js"></script>
 </body>
 </html>

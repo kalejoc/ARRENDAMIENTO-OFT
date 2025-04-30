@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/last_login.css">
+    <script src="last_login.js" defer></script>
     <title>Document</title>
 </head>
 <body>
@@ -14,50 +15,78 @@
         </div>
         <ul>
             <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#info">Name Usuario</a></li>
+            <li><a href="#info" id="nombreUsuario">Usuario</a></li>
             <li><a href="index.html">Salir</a></li>
             <li><a href="#contacto">Contáctenos</a></li>
+            <li><a href="#carrito" id="verCarrito">Carrito (<span id="carritoCantidad">0</span>)</a></li>
         </ul>
-        </nav>
-        <!-- INTERFAZ DE USUARIO (DESPUES DE INICIAR SESION) -->
+    </nav>
+    
     <section class="dashboard">
         <div class="busqueda-filtros">
-        <input type="text" placeholder="Buscar alojamiento..." class="input-busqueda">
-        <div class="filtros">
-            <button>Fechas</button>
-            <button>Huéspedes</button>
-            <button>Tipo</button>
-            <button>Precio</button>
-            <button>Reservar</button>
-        </div>
+            <input type="text" id="inputBusqueda" placeholder="Buscar alojamiento..." class="input-busqueda">
+            <div class="filtros">
+                <button id="filtroFechas">Fechas</button>
+                <button id="filtroHuespedes">Huéspedes</button>
+                <button id="filtroTipo">Tipo</button>
+                <button id="filtroPrecio">Precio</button>
+                <button id="filtroReservar">Reservar</button>
+            </div>
         </div>
     
         <div class="contenido">
-        <div class="resultados">
-            <div class="alojamiento">
-            <img src="img/casa1.jpeg" alt="Alojamiento 1">
-            <div class="info">
-                <h3>Estudio cerca de la playa</h3>
-                <p>Ubicación: Ciudad Costera</p>
-                <p>⭐ 4.9 | 67€ por noche</p>
+            <div class="resultados" id="resultadosAlojamientos">
+                <!-- Aquí se generarán los alojamientos de manera dinámica -->
             </div>
-            </div>
-            <div class="alojamiento">
-            <img src="img/casa2.jpeg" alt="Alojamiento 2">
-            <div class="info">
-                <h3>Piso con vista al mar</h3>
-                <p>Ubicación: Ciudad Costera</p>
-                <p>⭐ 4.7 | 89€ por noche</p>
-            </div>
-            </div>
-            <!-- Puedes agregar más alojamientos aquí -->
-        </div>
     
-        <div class="mapa">
-            <img src="img/mapa1.png" alt="Mapa de ubicaciones">
-        </div>
+            <div class="mapa">
+                <img src="img/mapa1.png" alt="Mapa de ubicaciones">
+            </div>
         </div>
     </section>
-    
+
+    <!-- Carrito Modal -->
+    <div id="carritoModal" class="carrito-modal">
+        <div class="carrito-contenido">
+            <h3>Carrito de Compras</h3>
+            <div id="listaCarrito"></div>
+            <button id="realizarCompra">Realizar Compra</button>
+            <button id="cerrarCarrito">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- Vista de las Compras Realizadas -->
+    <section class="compras">
+        <h3>Mis Compras</h3>
+        <div id="listaCompras"></div>
+    </section>
+
+    <!-- Vista de las Reservas -->
+    <section class="reservas">
+        <h3>Mis Reservas</h3>
+        <div id="listaReservas"></div>
+    </section>
+
+
+
+    <!-- Sección de Contacto -->
+    <section id="contacto" class="contacto">
+        <h3>Contáctenos</h3>
+        <form id="formContacto">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" rows="4" required></textarea>
+
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+
+        <div id="respuestaContacto" style="margin-top: 10px;"></div>
+    </section>
+
 </body>
 </html>
